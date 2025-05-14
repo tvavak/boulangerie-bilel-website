@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le Fournil du Plateau - Boulangerie artisanale au cœur de la Croix-Rousse, Lyon 4. Découvrez nos pains, viennoiseries et pâtisseries 100% fait maison ainsi que nos formules petit-déjeuner et déjeuner. Ouvert 7j/7.">
+    <meta name="keywords" content="boulangerie lyon, croix-rousse, pain artisanal, viennoiserie, patisserie, lyon 4, fournil du plateau, formules petit-déjeuner, formules déjeuner">
+    <meta name="author" content="Le Fournil du Plateau">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Le Fournil du Plateau - Boulangerie Artisanale Lyon 4">
+    <meta property="og:description" content="Boulangerie artisanale au cœur de la Croix-Rousse proposant pains, viennoiseries et pâtisseries 100% fait maison. Formules petit-déjeuner et déjeuner disponibles.">
+    <meta property="og:image" content="img/logo fournil du plateau.PNG">
+    <meta property="og:url" content="https://fournilduplateau.fr">
+    <meta property="og:type" content="website">
+    <title>Le Fournil du Plateau - Boulangerie Artisanale Lyon 4</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Pacifico&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Bandeau défilant -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">Ouvert du lundi au dimanche - Livraison possible à partir de 20€</div>
+            <div class="ticker-item">Promotion du moment : 4 baguettes achetées = 1 baguette offerte</div>
+            <div class="ticker-item">Nouveau : Découvrez notre gamme de pâtisseries sans gluten !</div>
+            <div class="ticker-item">45 Rue Pernon, 69004 Lyon - Tél : 04 72 00 10 20</div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <!-- Bouton du menu toggle (mobile) -->
+            <div class="nav-toggle" id="navToggle">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo fournil du plateau.PNG" alt="Le Fournil du Plateau" class="logo-img">
+                </a>
+            </div>
+            
+            <!-- Bouton appel (mobile) -->
+            <div class="phone-button">
+                <a href="tel:+33472001020">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            
+            <!-- Navigation principale -->
+            <nav id="mainNav" class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="pages/nos-formules.html">Nos Formules</a></li>
+                    <li><a href="pages/notre-histoire.html">Notre Histoire</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-background" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80');"></div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="animate-text">Saveurs artisanales au sommet de la Croix-Rousse</h2>
+                <p class="animate-text">Une boulangerie où tradition rime avec passion</p>
+            </div>
+            <div class="hero-buttons animate-buttons">
+                <a href="pages/nos-formules.html" class="btn btn-primary">
+                    <span>Découvrir nos formules</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                <a href="pages/contact.html" class="btn btn-outline">
+                    <span>Nous trouver</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos créations artisanales</h2>
+                <div class="title-underline"><span></span></div>
+                <p class="section-subtitle">Des produits 100% fait maison, préparés chaque jour avec passion</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item" data-aos="fade-right">
+                    <div class="feature-image-wrapper">
+                        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&q=80');"></div>
+                        <div class="feature-tag">Tradition</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Pains traditionnels</h3>
+                        <p>Façonnés à la main et cuits sur place dans notre fournil, nos pains sont préparés avec des farines rigoureusement sélectionnées. La fermentation lente leur confère un goût authentique.</p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-check-circle"></i> Farine locale et biologique</li>
+                            <li><i class="fas fa-check-circle"></i> Levain naturel</li>
+                            <li><i class="fas fa-check-circle"></i> Céréales sélectionnées</li>
+                        </ul>
+                        <a href="pages/nos-produits.html" class="btn-link">Découvrir nos pains <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="feature-item reverse" data-aos="fade-left">
+                    <div class="feature-image-wrapper">
+                        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1562707666-0ef112b353e0?auto=format&fit=crop&q=80');"></div>
+                        <div class="feature-tag">Douceur</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Pâtisseries gourmandes</h3>
+                        <p>Notre équipe de pâtissiers met son savoir-faire au service de la gourmandise avec des créations qui éveillent les sens. De la tartelette au chocolat à la forêt noire, découvrez nos douceurs !</p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-check-circle"></i> Chocolat pur beurre de cacao</li>
+                            <li><i class="fas fa-check-circle"></i> Fruits frais de saison</li>
+                            <li><i class="fas fa-check-circle"></i> Recettes authentiques</li>
+                        </ul>
+                        <a href="pages/nos-produits.html" class="btn-link">Voir nos pâtisseries <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-right">
+                    <div class="feature-image-wrapper">
+                        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&q=80');"></div>
+                        <div class="feature-tag">Saisonnier</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Gâteaux de saison</h3>
+                        <p>Nos pâtisseries suivent le rythme des saisons pour vous offrir des saveurs toujours au sommet de leur fraîcheur. Fraisier, tarte aux fruits rouges, bûches festives... Nous célébrons chaque moment de l'année.</p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-check-circle"></i> Fruits locaux et de saison</li>
+                            <li><i class="fas fa-check-circle"></i> Recettes renouvelables</li>
+                            <li><i class="fas fa-check-circle"></i> Créations spéciales pour les fêtes</li>
+                        </ul>
+                        <a href="pages/nos-produits.html" class="btn-link">Explorer nos spécialités <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-features">
+                <a href="pages/nos-produits.html" class="btn btn-primary">
+                    <span>Voir tous nos produits</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="formules-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Découvrez nos formules</h2>
+                <div class="title-underline"><span></span></div>
+                <p class="section-subtitle">Des combinaisons gourmandes pour ravir vos papilles à tout moment de la journée</p>
+            </div>
+            
+            <div class="formules-showcase">
+                <div class="formules-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&q=80');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1562707666-0ef112b353e0?auto=format&fit=crop&q=80');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&q=80');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/1070946/pexels-photo-1070946.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/205961/pexels-photo-205961.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/1640775/pexels-photo-1640775.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/2919579/pexels-photo-2919579.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                    </div>
+                </div>
+                
+                <div class="formules-slider-container">
+                    <div class="slider-controls">
+                        <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <div class="formules-slider">
+                        <div class="formule-item" data-formule="petit-dej-express">
+                            <div class="formule-header">
+                                <h3>Petit Déjeuner Express</h3>
+                                <span class="price">3,00€</span>
+                            </div>
+                            <p class="formule-desc">Café expresso + Pain au chocolat</p>
+                            <p class="formule-note">Une pause gourmande rapide pour commencer la journée</p>
+                        </div>
+                        
+                        <div class="formule-item" data-formule="petit-dej-complet">
+                            <div class="formule-header">
+                                <h3>Petit Déjeuner Complet</h3>
+                                <span class="price">4,20€</span>
+                            </div>
+                            <p class="formule-desc">1 boisson chaude (Café au lait, Cappuccino, Chocolat chaud) + 1 viennoiserie (Croissant ou Pain au chocolat)</p>
+                            <p class="formule-note">Pour bien commencer la journée</p>
+                        </div>
+                        
+                        <div class="formule-item active" data-formule="midi-standard">
+                            <div class="formule-header">
+                                <h3>Formule Midi Standard</h3>
+                                <span class="price">7,50€</span>
+                            </div>
+                            <p class="formule-desc">Pizza, Quiche ou Croque-Monsieur + Canette ou eau + Pâtisserie maison</p>
+                            <p class="formule-note">Un repas complet et savoureux à prix doux</p>
+                        </div>
+                        
+                        <div class="formule-item" data-formule="midi-premium">
+                            <div class="formule-header">
+                                <h3>Formule Midi Premium</h3>
+                                <span class="price">8,50€</span>
+                            </div>
+                            <p class="formule-desc">Sandwich / Suédois, Chapati ou Burger + Canette ou eau + Pâtisserie maison</p>
+                            <p class="formule-note">Pour une pause déjeuner gourmande</p>
+                        </div>
+                        
+                        <div class="formule-item" data-formule="baguettes">
+                            <div class="formule-header">
+                                <h3>Offre Baguettes</h3>
+                                <span class="price">3,00€</span>
+                            </div>
+                            <p class="formule-desc">3 baguettes + 1 offerte</p>
+                            <p class="formule-note">Le pain frais pour toute la famille</p>
+                        </div>
+                        
+                        <div class="formule-item" data-formule="flutes">
+                            <div class="formule-header">
+                                <h3>Pack 4 Flûtes</h3>
+                                <span class="price">4,20€</span>
+                            </div>
+                            <p class="formule-desc">Lot de 4 flûtes</p>
+                            <p class="formule-note">Idéal pour vos repas conviviaux</p>
+                        </div>
+                        
+                        <div class="formule-item" data-formule="croissants">
+                            <div class="formule-header">
+                                <h3>Pack Croissants</h3>
+                                <span class="price">3,50€</span>
+                            </div>
+                            <p class="formule-desc">4 croissants ou 2 pains au chocolat</p>
+                            <p class="formule-note">Pour un petit-déjeuner gourmand</p>
+                        </div>
+                        
+                        <div class="formule-item" data-formule="pains-chocolat">
+                            <div class="formule-header">
+                                <h3>Pack Pains au Chocolat</h3>
+                                <span class="price">3,80€</span>
+                            </div>
+                            <p class="formule-desc">4 pains au chocolat</p>
+                            <p class="formule-note">Un délice pour les amateurs de chocolat</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-pagination">
+                        <span class="pagination-dot" data-index="0"></span>
+                        <span class="pagination-dot" data-index="1"></span>
+                        <span class="pagination-dot active" data-index="2"></span>
+                        <span class="pagination-dot" data-index="3"></span>
+                        <span class="pagination-dot" data-index="4"></span>
+                        <span class="pagination-dot" data-index="5"></span>
+                        <span class="pagination-dot" data-index="6"></span>
+                        <span class="pagination-dot" data-index="7"></span>
+                    </div>
+                </div>
+                
+                <div class="formules-content-desktop">
+                    <div class="formule-item">
+                        <div class="formule-header">
+                            <h3>Formule Petit Déjeuner Express</h3>
+                            <span class="price">3,00€</span>
+                        </div>
+                        <p class="formule-desc">Café expresso + Pain au chocolat</p>
+                    </div>
+                    
+                    <div class="formule-item">
+                        <div class="formule-header">
+                            <h3>Formule Petit Déjeuner Complet</h3>
+                            <span class="price">4,20€</span>
+                        </div>
+                        <p class="formule-desc">1 boisson chaude (Café au lait, Cappuccino, Chocolat chaud) + 1 viennoiserie (Croissant ou Pain au chocolat)</p>
+                    </div>
+                    
+                    <div class="formule-item">
+                        <div class="formule-header">
+                            <h3>Formule Midi Standard</h3>
+                            <span class="price">7,50€</span>
+                        </div>
+                        <p class="formule-desc">Pizza, Quiche ou Croque-Monsieur + Canette ou eau + Pâtisserie maison</p>
+                    </div>
+                    
+                    <div class="formule-item">
+                        <div class="formule-header">
+                            <h3>Formule Midi Premium</h3>
+                            <span class="price">8,50€</span>
+                        </div>
+                        <p class="formule-desc">Sandwich / Suédois, Chapati ou Burger + Canette ou eau + Pâtisserie maison</p>
+                    </div>
+                    
+                    <div class="formule-item">
+                        <div class="formule-header">
+                            <h3>Autres Offres</h3>
+                        </div>
+                        <div class="offres-grid">
+                            <div class="offre-item">
+                                <span>3,00€</span>
+                                <p>3 baguettes + 1 offerte</p>
+                            </div>
+                            <div class="offre-item">
+                                <span>4,20€</span>
+                                <p>4 flûtes</p>
+                            </div>
+                            <div class="offre-item">
+                                <span>3,50€</span>
+                                <p>4 croissants ou 2 pains au chocolat</p>
+                            </div>
+                            <div class="offre-item">
+                                <span>3,80€</span>
+                                <p>4 pains au chocolat</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="pages/nos-formules.html" class="btn btn-primary">
+                        <span>Voir toutes nos formules</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1597895139270-a5dee112943f?auto=format&fit=crop&q=80');">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Des saveurs qui racontent une histoire</h2>
+                <p>Venez découvrir nos créations artisanales au cœur de la Croix-Rousse.<br>Chaque jour, nous mettons notre passion à votre service pour vous offrir le meilleur de la boulangerie-pâtisserie.</p>
+                <div class="cta-buttons">
+                    <a href="pages/contact.html" class="btn">Nous trouver</a>
+                    <a href="tel:+33472001020" class="btn btn-outline"><i class="fas fa-phone"></i> 04 72 00 10 20</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-preview">
+        <div class="container">
+            <h2 class="section-title">Nos délices en images</h2>
+            <p class="section-subtitle">Un aperçu de nos créations, à découvrir dans notre boulangerie</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&q=80');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1562707666-0ef112b353e0?auto=format&fit=crop&q=80');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&q=80');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/1070946/pexels-photo-1070946.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=800');"></div>
+                <div class="gallery-image" style="background-image: url('https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                        </div>
+            <div class="gallery-cta">
+                <a href="pages/nos-produits.html" class="btn">Voir tous nos produits</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Avis de nos clients</h2>
+                <div class="title-underline"><span></span></div>
+                <p class="section-subtitle">Ce que pensent les amateurs de nos produits artisanaux</p>
+            </div>
+            
+            <div class="testimonials-slider-container">
+                <div class="slider-controls">
+                    <button class="slider-prev testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-next testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="testimonials-slider">
+                    <div class="testimonial-item" data-index="0">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Le meilleur pain au chocolat que j'ai jamais mangé ! La pâte est parfaitement feuilletée et le chocolat de qualité supérieure. Je passe chaque matin avant d'aller au travail."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80');"></div>
+                                <div class="author-info">
+                                    <h4>Sophie Martin</h4>
+                                    <p>Cliente fidèle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item active" data-index="1">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Les pains sont tout simplement exceptionnels. Le croustillant de la croûte et la mie aérée témoignent d'un vrai savoir-faire artisanal. Je ne vais nulle part ailleurs pour acheter mon pain quotidien !"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1562707666-0ef112b353e0?auto=format&fit=crop&q=80');"></div>
+                                <div class="author-info">
+                                    <h4>Thomas Durand</h4>
+                                    <p>Habitant du quartier</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item" data-index="2">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-text">"J'ai commandé un fraisier pour l'anniversaire de ma fille et tout le monde était impressionné ! Les fraises étaient fraîches, la crème légère et le biscuit parfumé. Un vrai délice et un service impeccable."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&q=80');"></div>
+                                <div class="author-info">
+                                    <h4>Marie Leblanc</h4>
+                                    <p>Cliente satisfaite</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item" data-index="3">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"La formule petit-déjeuner est mon rituel du dimanche matin. Leurs viennoiseries sont à tomber par terre et le jus d'orange est pressé sur place. Je recommande vivement cette boulangerie !"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1597895139270-a5dee112943f?auto=format&fit=crop&q=80');"></div>
+                                <div class="author-info">
+                                    <h4>Pierre Dubois</h4>
+                                    <p>Client régulier</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item" data-index="4">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Impossible de passer à côté de cette boulangerie sans craquer pour l'une de leurs spécialités ! Les tartes aux fruits sont absolument délicieuses, avec des fruits toujours frais et de saison. Un pur bonheur pour les papilles !"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background-image: url('https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                                <div class="author-info">
+                                    <h4>Emma Laurent</h4>
+                                    <p>Cliente passionnée</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item" data-index="5">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-text">"Je suis sans gluten et j'ai toujours eu du mal à trouver de bonnes options en boulangerie. Mais ici, ils proposent des alternatives sans gluten vraiment savoureuses ! Les cookies aux pépites de chocolat sont incroyables, on ne sent absolument pas la différence !"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background-image: url('https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+                                <div class="author-info">
+                                    <h4>Lucas Mercier</h4>
+                                    <p>Client régulier</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-pagination testimonial-pagination">
+                    <span class="pagination-dot" data-index="0"></span>
+                    <span class="pagination-dot active" data-index="1"></span>
+                    <span class="pagination-dot" data-index="2"></span>
+                    <span class="pagination-dot" data-index="3"></span>
+                    <span class="pagination-dot" data-index="4"></span>
+                    <span class="pagination-dot" data-index="5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Le Fournil du Plateau</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 45 Rue Pernon, 69004 Lyon</p>
+                    <p><i class="fas fa-phone"></i> 04 72 00 10 20</p>
+                    <p><i class="fas fa-envelope"></i> contact@fournilduplateau.fr</p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Horaires d'ouverture</h3>
+                    <ul class="hours-list">
+                        <li><span>Lundi - Vendredi :</span> <span>6h30 - 19h30</span></li>
+                        <li><span>Samedi :</span> <span>7h00 - 19h00</span></li>
+                        <li><span>Dimanche :</span> <span>7h00 - 13h00</span></li>
+                        <li><span>Jours fériés :</span> <span>7h00 - 13h00</span></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="pages/nos-formules.html">Nos Formules</a></li>
+                        <li><a href="pages/notre-histoire.html">Notre Histoire</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Suivez-nous</h3>
+                    <p>Retrouvez-nous sur les réseaux sociaux pour des actualités et promotions exclusives !</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Le Fournil du Plateau - Tous droits réservés | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="back-to-top" aria-label="Retour en haut de la page">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

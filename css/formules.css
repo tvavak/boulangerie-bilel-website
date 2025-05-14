@@ -1,0 +1,684 @@
+/* CSS distinct pour la page des produits - Version améliorée */
+
+/* Menu de navigation rapide pour une meilleure UX */
+.quick-nav {
+    background-color: #8b5e3c;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quick-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.quick-nav li {
+    margin: 0;
+}
+
+.quick-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.quick-nav a:hover, .quick-nav a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid #fff;
+}
+
+.quick-nav i {
+    margin-right: 8px;
+}
+
+/* Hero section plus petite pour les pages intérieures */
+.hero-small {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+}
+
+.hero-small .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -2;
+}
+
+.hero-small .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero-small .hero-content {
+    padding: 0 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero-small h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-small p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.breadcrumbs {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.breadcrumbs a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section des formules - Design amu00e9lioru00e9 */
+.formules-section {
+    padding: 80px 0;
+    background-color: #fff;
+    scroll-margin-top: 60px; /* Pour le scroll doux avec la navigation rapide */
+}
+
+.formules-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.formule-category {
+    margin-bottom: 80px;
+    position: relative;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formule-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #8b5e3c;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.category-title i {
+    margin-right: 15px;
+    font-size: 1.8rem;
+    opacity: 0.8;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5e3c 0%, rgba(139, 94, 60, 0.3) 100%);
+    border-radius: 1.5px;
+}
+
+.formule-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.formule-card {
+    flex: 1 1 300px;
+    background-color: #f9f5f0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.formule-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.formule-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #8b5e3c;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.formule-card:hover:before {
+    transform: scaleY(1);
+}
+
+.formule-card-content {
+    padding: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.formule-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #8b5e3c;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.formule-price:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #8b5e3c;
+    transition: width 0.3s ease;
+}
+
+.formule-card:hover .formule-price:after {
+    width: 100%;
+}
+
+.formule-details p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Section des tarifs - Version amu00e9lioru00e9e */
+.tarifs-section {
+    padding: 80px 0;
+    background-color: #f9f5f0;
+    background-image: url('https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&q=80&w=1900');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    scroll-margin-top: 60px; /* Pour le scroll doux avec la navigation rapide */
+}
+
+.tarifs-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tarifs-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.prix-table-container {
+    overflow-x: auto;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 0;
+}
+
+.prix-table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.prix-table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.prix-table-container::-webkit-scrollbar-thumb {
+    background: #8b5e3c;
+    border-radius: 4px;
+}
+
+.prix-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.prix-table thead {
+    background: linear-gradient(135deg, #8b5e3c 0%, #a67c52 100%);
+    color: #fff;
+}
+
+.prix-table th {
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.prix-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #e9e9e9;
+    transition: all 0.3s ease;
+}
+
+.prix-table tr:last-child td {
+    border-bottom: none;
+}
+
+.prix-table tr:nth-child(even) {
+    background-color: #faf6f2;
+}
+
+.prix-table tr {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prix-table tbody tr:hover {
+    background-color: #f5efe9;
+    transform: translateY(-2px) scale(1.005);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+}
+
+/* CTA Section */
+.cta {
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+/* CTA Amu00e9lioru00e9 */
+.cta {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.cta .cta-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta .cta-content:hover {
+    transform: translateY(-5px);
+}
+
+/* Bouton Retour en haut */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: #a67c52;
+    transform: translateY(-5px);
+}
+
+/* Responsive design amu00e9lioru00e9 */
+/* --------- REFONTE MOBILE --------- */
+@media screen and (max-width: 992px) {
+    /* Menu de navigation simplifiu00e9 */
+    .quick-nav {
+        position: relative;
+        background-color: #f9f5f0;
+        box-shadow: none;
+        padding: 10px 0;
+        margin-bottom: 15px;
+    }
+    
+    .quick-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .quick-nav a {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        color: #8b5e3c;
+        background-color: #fff;
+        border: 1px solid #e5e0db;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .quick-nav a:hover, .quick-nav a.active {
+        background-color: #8b5e3c;
+        color: #fff;
+        border-color: #8b5e3c;
+        border-bottom: 1px solid #8b5e3c;
+    }
+    
+    .formule-category {
+        padding: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-small {
+        height: 240px;
+    }
+    
+    .hero-small h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .hero-small p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .breadcrumbs {
+        font-size: 0.8rem;
+    }
+    
+    .formules-section,
+    .tarifs-section {
+        padding: 30px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .formule-cards {
+        gap: 15px;
+    }
+    
+    .formule-card {
+        margin-bottom: 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .formule-card:hover {
+        transform: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .formule-card-content {
+        padding: 20px;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+    
+    .category-title i {
+        font-size: 1.3rem;
+        margin-right: 10px;
+    }
+    
+    .formule-price {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .prix-table-container {
+        margin-top: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    /* Amlioration du tableau pour mobile */
+    .prix-table {
+        table-layout: fixed;
+    }
+    
+    .prix-table th,
+    .prix-table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+        vertical-align: middle;
+    }
+    
+    /* Bouton retour en haut simplifiu00e9 */
+    #back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .cta {
+        padding: 50px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Layout plus simple et direct */
+    .hero-small {
+        height: 180px;
+    }
+    
+    .hero-small h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-small p {
+        font-size: 0.9rem;
+    }
+    
+    .quick-nav {
+        padding: 8px 0;
+    }
+    
+    .quick-nav ul {
+        gap: 4px;
+    }
+    
+    .quick-nav a {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .formule-category {
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+    
+    /* Redesign des cartes pour plus de simplcitu00e9 */
+    .formule-card {
+        border-radius: 8px;
+    }
+    
+    .formule-card:before {
+        width: 3px;
+    }
+    
+    .formule-card-content {
+        padding: 15px;
+    }
+    
+    .formule-price {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .formule-details p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Table plus compacte */
+    .prix-table th,
+    .prix-table td {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+    }
+    
+    /* Tableau optimisu00e9 pour les petits u00e9crans */
+    .prix-table th:nth-child(2), 
+    .prix-table td:nth-child(2) {
+        width: 22%;
+    }
+    
+    .prix-table th:nth-child(3), 
+    .prix-table td:nth-child(3),
+    .prix-table th:nth-child(4), 
+    .prix-table td:nth-child(4) {
+        width: 20%;
+        text-align: center;
+    }
+
+    /* CTA plus simple */
+    .cta .cta-content {
+        padding: 20px 15px;
+    }
+    
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations au scroll pour amu00e9liorer l'UX */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}

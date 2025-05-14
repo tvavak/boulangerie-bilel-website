@@ -1,0 +1,747 @@
+/* CSS distinct pour la page histoire */
+
+/* Hero section plus petite pour les pages intérieures - repris de formules.css */
+.hero-small {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 104px; /* Même valeur que dans style.css principal */
+}
+
+.hero-small .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -2;
+}
+
+.hero-small .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Plus sombre pour meilleur contraste sur mobile */
+    z-index: -1;
+}
+
+.hero-small .hero-content {
+    padding: 0 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero-small h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 0.8s ease-out;
+    transition: font-size 0.3s ease;
+}
+
+.hero-small p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.breadcrumbs {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.breadcrumbs a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Section principale histoire */
+.histoire-section {
+    padding: 40px 0; /* Ru00e9duction de l'espacement */
+    background-color: #fff;
+    margin-top: -20px; /* Ru00e9duire l'espace par rapport au hero */
+}
+
+.histoire-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.histoire-intro {
+    margin-bottom: 30px; /* Ru00e9duction de l'espacement */
+    text-align: center;
+}
+
+.histoire-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.histoire-text p {
+    margin-bottom: 20px;
+}
+
+.histoire-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 30px auto; /* Ru00e9duction de l'espacement */
+    padding: 10px 0; /* Ru00e9duction de l'espacement */
+}
+
+.timeline:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #8b5e3c;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    animation: fadeIn 0.5s ease-in-out both;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #fff;
+    border: 4px solid #8b5e3c;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.right::after {
+    left: -16px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #f9f5f0;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item.left .timeline-content {
+    border-left: 5px solid #8b5e3c;
+}
+
+.timeline-item.right .timeline-content {
+    border-right: 5px solid #8b5e3c;
+}
+
+.timeline-item.left .timeline-content:before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent #f9f5f0;
+}
+
+.timeline-item.right .timeline-content:before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-style: solid;
+    border-color: transparent #f9f5f0 transparent transparent;
+}
+
+.timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #8b5e3c;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Section valeurs */
+.values-section {
+    margin: 40px 0; /* Ru00e9duction de l'espacement */
+    text-align: center;
+}
+
+.values-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.values-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #8b5e3c;
+}
+
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.value-card {
+    flex: 1 1 200px;
+    max-width: 230px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: #8b5e3c;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Section équipe */
+.team-section {
+    margin: 40px 0; /* Ru00e9duction de l'espacement */
+    text-align: center;
+}
+
+.team-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.team-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #8b5e3c;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.team-member {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.member-photo {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.member-photo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.team-member h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin: 20px 0 5px;
+}
+
+.member-role {
+    color: #8b5e3c;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.team-member p {
+    padding: 0 20px 25px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Section citation */
+.quote-section {
+    background-color: #f9f5f0;
+    padding: 40px 0; /* Ru00e9duction de l'espacement */
+    text-align: center;
+    margin-top: -1px; /* u00c9liminer l'espace entre les sections */
+}
+
+.quote-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+blockquote {
+    position: relative;
+    padding: 40px;
+}
+
+blockquote:before {
+    content: '\201C';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: Georgia, serif;
+    font-size: 80px;
+    line-height: 1;
+    color: #8b5e3c;
+    opacity: 0.3;
+}
+
+blockquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+blockquote cite {
+    font-size: 1.1rem;
+    color: #8b5e3c;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Section CTA histoire */
+.cta-histoire {
+    padding: 50px 0; /* Ru00e9duction de l'espacement */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    margin-top: -1px; /* u00c9liminer l'espace entre les sections */
+}
+
+.cta-histoire .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-histoire h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-histoire p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Bouton retour en haut */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: #a67c52;
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .histoire-section {
+        padding: 30px 15px; /* Moins de padding sur tablet */
+    }
+    
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 15px;
+        margin-bottom: -15px; /* Pour un design plus compact */
+    }
+    
+    .timeline-item.right {
+        left: 0;
+    }
+    
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 15px;
+    }
+    
+    .timeline-item.left .timeline-content::before,
+    .timeline-item.right .timeline-content::before {
+        left: -15px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent #f9f5f0 transparent transparent;
+    }
+    
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        border-left: 5px solid #8b5e3c;
+        border-right: none;
+    }
+    
+    .value-card {
+        flex: 1 1 40%;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-small {
+        height: 240px;
+    }
+    
+    .hero-small h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .hero-small p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .breadcrumbs {
+        font-size: 0.8rem;
+    }
+    
+    /* Design plus compact pour mobile */
+    .histoire-section,
+    .values-section, 
+    .team-section,
+    .quote-section, 
+    .cta-histoire {
+        padding: 25px 10px;
+    }
+    
+    .hero-small h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .hero-small p {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .breadcrumbs {
+        font-size: 0.8rem;
+    }
+    
+    .histoire-section,
+    .quote-section,
+    .cta-histoire {
+        padding: 50px 0;
+    }
+    
+    .histoire-intro {
+        margin-bottom: 40px;
+    }
+    
+    .histoire-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .timeline {
+        margin: 40px auto;
+    }
+    
+    .values-section,
+    .team-section {
+        margin: 50px 0;
+    }
+    
+    .values-section h2,
+    .team-section h2 {
+        font-size: 2rem;
+    }
+    
+    .team-member {
+        flex: 1 1 100%;
+    }
+    
+    blockquote p {
+        font-size: 1.5rem;
+    }
+    
+    .cta-histoire h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-histoire p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-small {
+        height: 180px;
+    }
+    
+    .hero-small h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-small p {
+        font-size: 0.9rem;
+    }
+    
+    /* S'assurer que le hero ne déborde pas sous la navbar mobile */
+    .hero-small .hero-background {
+        background-position: center 30%; /* Meilleur positionnement de l'image */
+    }
+    
+    /* Design encore plus compact pour petit mobile */
+    .histoire-section,
+    .values-section, 
+    .team-section,
+    .quote-section, 
+    .cta-histoire {
+        padding: 20px 8px;
+    }
+    
+    /* Réduire les espacements entre éléments */
+    .timeline-item {
+        padding-left: 50px;
+        margin-bottom: -20px;
+    }
+    
+    .values-grid, .team-grid {
+        gap: 15px;
+    }
+    
+    /* Menu de navigation plus optimisé */
+    .navigation li {
+        margin-bottom: 3px;
+    }
+    
+    .hero-small h1 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .hero-small p {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
+    .breadcrumbs {
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .histoire-text {
+        font-size: 0.95rem;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+    }
+    
+    .timeline-content {
+        padding: 15px 20px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .value-card {
+        flex: 1 1 100%;
+    }
+    
+    blockquote p {
+        font-size: 1.3rem;
+    }
+    
+    .cta-histoire h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-histoire p {
+        font-size: 1rem;
+    }
+}

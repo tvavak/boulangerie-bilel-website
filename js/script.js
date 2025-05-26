@@ -656,3 +656,138 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Gestion des avis Google
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélection des éléments
+    const reviewItems = document.querySelectorAll('.review-item');
+    const reviewDots = document.querySelectorAll('.review-dot');
+    const prevButton = document.querySelector('.review-prev');
+    const nextButton = document.querySelector('.review-next');
+    
+    let currentReviewIndex = 0;
+    let reviewInterval;
+    let isReviewInteracting = false;
+    
+    // Fonction pour afficher un avis spécifique
+    function showReview(index) {
+        // Masquer tous les avis
+        reviewItems.forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Désactiver tous les points
+        reviewDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Afficher l'avis actif
+        reviewItems[index].classList.add('active');
+        
+        // Activer le point correspondant
+        reviewDots[index].classList.add('active');
+        
+        // Mettre à jour l'index courant
+        currentReviewIndex = index;
+    }
+    
+    // Fonction pour passer à l'avis suivant
+    function nextReview() {
+        let newIndex = currentReviewIndex + 1;
+        if (newIndex >= reviewItems.length) {
+            newIndex = 0;
+        }
+        showReview(newIndex);
+    }
+    
+    // Fonction pour passer à l'avis précédent
+    function prevReview() {
+        let newIndex = currentReviewIndex - 1;
+        if (newIndex < 0) {
+            newIndex = reviewItems.length - 1;
+        }
+        showReview(newIndex);
+    }
+    
+    // Démarrer le défilement automatique
+    function startAutoReview() {
+        // Arrêter l'intervalle existant s'il y en a un
+        stopAutoReview();
+        
+        reviewInterval = setInterval(() => {
+            // Vérifier si l'utilisateur n'est pas en train d'interagir avec les avis
+            if (!isReviewInteracting) {
+                nextReview();
+            }
+        }, 6000); // Change d'avis toutes les 6 secondes
+    }
+    
+    // Arrêter le défilement automatique
+    function stopAutoReview() {
+        if (reviewInterval) {
+            clearInterval(reviewInterval);
+        }
+    }
+    
+    // Configurer les écouteurs d'événements
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            prevReview();
+            // Arrêter temporairement le défilement automatique quand l'utilisateur interagit
+            stopAutoReview();
+            // Redémarrer après un délai
+            setTimeout(startAutoReview, 10000);
+        });
+        
+        nextButton.addEventListener('click', () => {
+            nextReview();
+            // Arrêter temporairement le défilement automatique quand l'utilisateur interagit
+            stopAutoReview();
+            // Redémarrer après un délai
+            setTimeout(startAutoReview, 10000);
+        });
+    }
+    
+    // Ajouter des écouteurs d'événements aux points de navigation
+    reviewDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showReview(index);
+            // Arrêter temporairement le défilement automatique quand l'utilisateur interagit
+            stopAutoReview();
+            // Redémarrer après un délai
+            setTimeout(startAutoReview, 10000);
+        });
+    });
+    
+    // Gestion des interactions avec le conteneur d'avis
+    const reviewsContainer = document.querySelector('.google-reviews-container');
+    if (reviewsContainer) {
+        reviewsContainer.addEventListener('mouseenter', () => {
+            isReviewInteracting = true;
+        });
+        
+        reviewsContainer.addEventListener('mouseleave', () => {
+            isReviewInteracting = false;
+        });
+        
+        // Gestion des interactions tactiles (pour les appareils mobiles)
+        reviewsContainer.addEventListener('touchstart', () => {
+            isReviewInteracting = true;
+        });
+        
+        reviewsContainer.addEventListener('touchend', () => {
+            isReviewInteracting = false;
+            // Redémarrer le défilement automatique après un délai
+            setTimeout(() => {
+                isReviewInteracting = false;
+            }, 5000);
+        });
+    }
+    
+    // Initialiser le premier avis et démarrer le défilement automatique
+    if (reviewItems.length > 0) {
+        showReview(0);
+        startAutoReview();
+    }
+});
+

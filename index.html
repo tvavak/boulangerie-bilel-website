@@ -26,9 +26,9 @@
     <!-- Bandeau défilant -->
     <div class="ticker-wrap">
         <div class="ticker">
-            <div class="ticker-item">Ouvert du lundi au dimanche - Livraison possible à partir de 20€</div>
+            <div class="ticker-item">Ouvert tous les jours de 6h à 20h (7j/7)</div>
+            <div class="ticker-item">Livraison disponible dans tout Lyon et ses alentours</div>
             <div class="ticker-item">Promotion du moment : 4 baguettes achetées = 1 baguette offerte</div>
-            <div class="ticker-item">Nouveau : Découvrez notre gamme de pâtisseries sans gluten !</div>
             <div class="ticker-item">45 Rue Pernon, 69004 Lyon - Tél : 04 72 00 10 20</div>
         </div>
     </div>
@@ -103,7 +103,7 @@
             <div class="feature-grid">
                 <div class="feature-item" data-aos="fade-right">
                     <div class="feature-image-wrapper">
-                        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&q=80');"></div>
+                        <div class="feature-image" style="background-image: url('img/baguette traduition.jpg');"></div>
                         <div class="feature-tag">Tradition</div>
                     </div>
                     <div class="feature-content">
@@ -114,13 +114,13 @@
                             <li><i class="fas fa-check-circle"></i> Levain naturel</li>
                             <li><i class="fas fa-check-circle"></i> Céréales sélectionnées</li>
                         </ul>
-                        <a href="pages/nos-produits.html" class="btn-link">Découvrir nos pains <i class="fas fa-arrow-right"></i></a>
+                        <a href="javascript:void(0)" class="btn-link" id="openPainsModal">Découvrir nos pains <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <div class="feature-item reverse" data-aos="fade-left">
                     <div class="feature-image-wrapper">
-                        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1562707666-0ef112b353e0?auto=format&fit=crop&q=80');"></div>
+                        <div class="feature-image" style="background-image: url('img/3 gâteaux.jpg');"></div>
                         <div class="feature-tag">Douceur</div>
                     </div>
                     <div class="feature-content">
@@ -131,24 +131,7 @@
                             <li><i class="fas fa-check-circle"></i> Fruits frais de saison</li>
                             <li><i class="fas fa-check-circle"></i> Recettes authentiques</li>
                         </ul>
-                        <a href="pages/nos-produits.html" class="btn-link">Voir nos pâtisseries <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="feature-item" data-aos="fade-right">
-                    <div class="feature-image-wrapper">
-                        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&q=80');"></div>
-                        <div class="feature-tag">Saisonnier</div>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Gâteaux de saison</h3>
-                        <p>Nos pâtisseries suivent le rythme des saisons pour vous offrir des saveurs toujours au sommet de leur fraîcheur. Fraisier, tarte aux fruits rouges, bûches festives... Nous célébrons chaque moment de l'année.</p>
-                        <ul class="feature-highlights">
-                            <li><i class="fas fa-check-circle"></i> Fruits locaux et de saison</li>
-                            <li><i class="fas fa-check-circle"></i> Recettes renouvelables</li>
-                            <li><i class="fas fa-check-circle"></i> Créations spéciales pour les fêtes</li>
-                        </ul>
-                        <a href="pages/nos-produits.html" class="btn-link">Explorer nos spécialités <i class="fas fa-arrow-right"></i></a>
+                        <a href="javascript:void(0)" class="btn-link" id="openPatisseriesModal">Voir nos pâtisseries <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -218,7 +201,7 @@
                                 <h3>Formule Midi Standard</h3>
                                 <span class="price">7,50€</span>
                             </div>
-                            <p class="formule-desc">Pizza, Quiche ou Croque-Monsieur + Canette ou eau + Pâtisserie maison</p>
+                            <p class="formule-desc">Quiche ou Croque-Monsieur + Canette ou eau + Pâtisserie maison</p>
                             <p class="formule-note">Un repas complet et savoureux à prix doux</p>
                         </div>
                         
@@ -504,7 +487,7 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <p class="testimonial-text">"Je suis sans gluten et j'ai toujours eu du mal à trouver de bonnes options en boulangerie. Mais ici, ils proposent des alternatives sans gluten vraiment savoureuses ! Les cookies aux pépites de chocolat sont incroyables, on ne sent absolument pas la différence !"</p>
+                            <p class="testimonial-text">"Leur croissant est une merveille, je recommande vivement. La pâte est parfaitement feuilletée et le beurre de qualité se sent u00e0 chaque bouchée. Un pur moment de plaisir chaque matin !"</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar" style="background-image: url('https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
                                 <div class="author-info">
@@ -528,6 +511,67 @@
         </div>
     </section>
 
+    <!-- Modales pour les galeries d'images -->
+    <div id="painsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Nos pains artisanaux</h2>
+            <div class="gallery-modal">
+                <div class="gallery-item">
+                    <img src="img/baguette traduition.jpg" alt="Pain traditionnel">
+                    <div class="gallery-caption">
+                        <h3>Pain Traditionnel</h3>
+                        <p>Un pain rustique avec la croute dorée et la mie alvée</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/image.png" alt="Baguette Tradition">
+                    <div class="gallery-caption">
+                        <h3>Baguette </h3>
+                        <p>Notre fameuse baguette u00e0 la croute croustillante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="patisseriesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Nos patisseries</h2>
+            <div class="gallery-modal">
+                <div class="gallery-item">
+                    <img src="img/chocolat.jpg" alt="Tarte au chocolat">
+                    <div class="gallery-caption">
+                        <h3>Tarte au chocolat</h3>
+                        <p>Un classique de la Patisserie française</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/citron.jpg" alt="Tarte au citron">
+                    <div class="gallery-caption">
+                        <h3>Tarte au citron</h3>
+                        <p>Délicieuse tarte au citron frais de saison</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/fraisier.jpg" alt="fraisier">
+                    <div class="gallery-caption">
+                        <h3>Fraisier</h3>
+                        <p>Fraisier frais de saison </p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/mangue.jpg" alt="Patisserie variées">
+                    <div class="gallery-caption">
+                        <h3>Tarte à la mangue</h3>
+                        <p>Tarte à la mangue fraîche de saison</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -540,10 +584,10 @@
                 <div class="footer-hours">
                     <h3>Horaires d'ouverture</h3>
                     <ul class="hours-list">
-                        <li><span>Lundi - Vendredi :</span> <span>6h30 - 19h30</span></li>
-                        <li><span>Samedi :</span> <span>7h00 - 19h00</span></li>
-                        <li><span>Dimanche :</span> <span>7h00 - 13h00</span></li>
-                        <li><span>Jours fériés :</span> <span>7h00 - 13h00</span></li>
+                        <li><span>Lundi - Vendredi :</span> <span>6h00 - 20h00</span></li>
+                        <li><span>Samedi :</span> <span>6h00 - 20h00</span></li>
+                        <li><span>Dimanche :</span> <span>6h00 - 20h00</span></li>
+                        <li><span>Jours fériés :</span> <span>6h00 - 20h00</span></li>
                     </ul>
                 </div>
                 <div class="footer-links">

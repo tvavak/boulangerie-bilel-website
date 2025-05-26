@@ -534,4 +534,82 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Gestion des modales pour les galeries d'images
+    const painsModal = document.getElementById('painsModal');
+    const patisseriesModal = document.getElementById('patisseriesModal');
+    const gateauxSaisonModal = document.getElementById('gateauxSaisonModal');
+    const openPainsModalBtn = document.getElementById('openPainsModal');
+    const openPatisseriesModalBtn = document.querySelectorAll('#openPatisseriesModal, [id="openPatisseriesModal"]');
+    const openGateauxSaisonModalBtn = document.getElementById('openGateauxSaisonModal');
+    const closeModalBtns = document.querySelectorAll('.close-modal');
+    
+    // Fonction pour ouvrir une modale avec animation
+    function openModal(modal) {
+        document.body.style.overflow = 'hidden'; // Empêcher le défilement
+        modal.style.display = 'block';
+        // Déclencher le reflow pour que la transition fonctionne
+        modal.offsetHeight;
+        modal.classList.add('active');
+    }
+    
+    // Fonction pour fermer une modale avec animation
+    function closeModal(modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Réactiver le défilement
+        }, 300); // Correspond à la durée de transition CSS
+    }
+    
+    // Ouvrir la modale des pains
+    if (openPainsModalBtn) {
+        openPainsModalBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal(painsModal);
+        });
+    }
+    
+    // Ouvrir la modale des pâtisseries (plusieurs boutons possibles)
+    if (openPatisseriesModalBtn.length > 0) {
+        openPatisseriesModalBtn.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(patisseriesModal);
+            });
+        });
+    }
+    
+    // Ouvrir la modale des gâteaux de saison
+    if (openGateauxSaisonModalBtn) {
+        openGateauxSaisonModalBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal(gateauxSaisonModal);
+        });
+    }
+    
+    // Fermer les modales en cliquant sur le bouton X
+    closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            closeModal(modal);
+        });
+    });
+    
+    // Fermer les modales en cliquant en dehors du contenu
+    window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+            closeModal(e.target);
+        }
+    });
+    
+    // Fermer les modales avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const activeModals = document.querySelectorAll('.modal.active');
+            activeModals.forEach(modal => {
+                closeModal(modal);
+            });
+        }
+    });
 });

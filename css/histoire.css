@@ -1,5 +1,176 @@
 /* CSS distinct pour la page histoire */
 
+/* Section des avis Google */
+.reviews-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.google-reviews-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.google-reviews-slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+.review-item {
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin: 0;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.review-item.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid #f1f1f1;
+}
+
+.review-info h4 {
+    margin: 0 0 5px;
+    color: var(--dark-gray);
+    font-family: 'Poppins', sans-serif;
+}
+
+.review-stars {
+    color: #FFC107;
+    font-size: 14px;
+}
+
+.review-content p {
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+}
+
+/* Guillemets supprimés selon la demande du client */
+.review-content p {
+    padding: 0 5px;
+}
+
+.review-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.review-prev,
+.review-next {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 10px;
+}
+
+.review-prev:hover,
+.review-next:hover {
+    background-color: var(--dark-orange);
+}
+
+.review-dots {
+    display: flex;
+    margin: 0 20px;
+}
+
+.review-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-dot.active {
+    background-color: var(--orange);
+}
+
+.google-badge {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.google-badge a {
+    display: inline-flex;
+    align-items: center;
+    color: #4285F4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #4285F4;
+}
+
+.google-badge a:hover {
+    background-color: #4285F4;
+    color: white;
+}
+
+.google-badge .fab {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .review-item {
+        padding: 15px;
+    }
+    
+    .review-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .review-stars {
+        font-size: 12px;
+    }
+}
+
+
 /* Hero section plus petite pour les pages intérieures - repris de formules.css */
 .hero-small {
     position: relative;

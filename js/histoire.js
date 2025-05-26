@@ -1,5 +1,93 @@
 // JavaScript pour la page histoire
 document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du carrousel d'avis Google
+    const reviewSlider = document.querySelector('.google-reviews-slider');
+    const reviewItems = document.querySelectorAll('.review-item');
+    const reviewDots = document.querySelectorAll('.review-dot');
+    const prevButton = document.querySelector('.review-prev');
+    const nextButton = document.querySelector('.review-next');
+    
+    let currentReview = 0;
+    const reviewCount = reviewItems.length;
+    
+    // Fonction pour afficher un avis spécifique
+    function showReview(index) {
+        if (index < 0) index = reviewCount - 1;
+        if (index >= reviewCount) index = 0;
+        
+        currentReview = index;
+        
+        // Mettre à jour la visibilité des avis
+        reviewItems.forEach((item, i) => {
+            item.classList.toggle('active', i === currentReview);
+        });
+        
+        // Mettre à jour les points de navigation
+        reviewDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentReview);
+        });
+    }
+    
+    // Navigation avec les boutons
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            showReview(currentReview - 1);
+        });
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            showReview(currentReview + 1);
+        });
+    }
+    
+    // Navigation avec les points
+    reviewDots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showReview(i);
+        });
+    });
+    
+    // Rotation automatique des avis
+    let reviewInterval;
+    
+    function startReviewsAutoRotation() {
+        reviewInterval = setInterval(() => {
+            showReview(currentReview + 1);
+        }, 5000); // Changer d'avis toutes les 5 secondes
+    }
+    
+    function stopReviewsAutoRotation() {
+        clearInterval(reviewInterval);
+    }
+    
+    // Démarrer la rotation automatique
+    if (reviewSlider && reviewItems.length > 1) {
+        startReviewsAutoRotation();
+        
+        // Arrêter la rotation au survol
+        reviewSlider.addEventListener('mouseenter', stopReviewsAutoRotation);
+        reviewSlider.addEventListener('mouseleave', startReviewsAutoRotation);
+        
+        // Arrêter la rotation si l'utilisateur interagit avec les contrôles
+        prevButton.addEventListener('click', () => {
+            stopReviewsAutoRotation();
+            setTimeout(startReviewsAutoRotation, 10000); // Reprendre après 10 secondes
+        });
+        
+        nextButton.addEventListener('click', () => {
+            stopReviewsAutoRotation();
+            setTimeout(startReviewsAutoRotation, 10000); // Reprendre après 10 secondes
+        });
+        
+        reviewDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                stopReviewsAutoRotation();
+                setTimeout(startReviewsAutoRotation, 10000); // Reprendre après 10 secondes
+            });
+        });
+    }
+
     // Gestion du bouton retour en haut de page
     const backToTopButton = document.getElementById('back-to-top');
     

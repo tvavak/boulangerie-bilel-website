@@ -743,7 +743,7 @@ header .container {
 
 /* Section nos créations artisanales (features) */
 .features {
-    padding: 5rem 0 4rem; /* Espacement plus u00e9quilibru00e9 */
+    padding: 2rem 0 4rem; /* Espacement plus u00e9quilibru00e9 */
     background-color: var(--white);
     position: relative;
     margin-bottom: 0; /* Suppression de la marge négative */
@@ -787,7 +787,7 @@ header .container {
 .feature-grid {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -949,7 +949,7 @@ header .container {
 
 /* Section formules preview */
 .formules-preview {
-    padding: 4rem 0 4rem; /* Espacement u00e9quilibru00e9 et suppression de la redondance */
+    padding: 0rem 0 4rem; /* Espacement u00e9quilibru00e9 et suppression de la redondance */
     position: relative;
     margin-top: 0;
     background-color: var(--light-cream);
@@ -1531,7 +1531,7 @@ footer {
 
 /* Section Témoignages */
 .testimonials {
-    padding: 4rem 0 3rem; /* Ajout d'un padding bottom pour un meilleur u00e9quilibre */
+    padding: 0rem 0 3rem; /* Ajout d'un padding bottom pour un meilleur u00e9quilibre */
     background-color: var(--white);
     position: relative;
     margin-bottom: 0;
@@ -1560,7 +1560,7 @@ footer {
     }
     
     .gallery-preview {
-        padding-top: 0;
+        padding-top: 1.5rem;
         padding-bottom: 2rem;
     }
     
@@ -1661,7 +1661,7 @@ footer {
 }
 
 .gallery-preview {
-    padding-top: 0; /* Réduit le padding en haut de la section entière */
+    padding-top: 2rem; /* Réduit le padding en haut de la section entière */
 }
 
 @media (max-width: 767px) {
@@ -1670,7 +1670,7 @@ footer {
     }
     
     .gallery-preview {
-        padding-top: 0; /* Encore moins d'espace sur mobile */
+        padding-top: 2rem; /* Encore moins d'espace sur mobile */
     }
 }
 
@@ -1715,7 +1715,7 @@ footer {
 
 .testimonials-slider {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
     width: 100%;
     gap: 1.5rem;
     padding: 1.5rem 1rem;
@@ -1729,9 +1729,10 @@ footer {
     padding: 0;
     opacity: 0.7;
     transform: scale(0.9);
-    transition: all 0.5s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
     margin: 0 auto;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    will-change: transform, opacity;
 }
 
 @media (min-width: 768px) {

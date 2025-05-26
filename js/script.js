@@ -276,35 +276,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentTestimonialIndex = 0; // Index du témoignage actif par défaut
     
-    // Fonction pour mettre à jour le slider des témoignages
+    // Calcul des dimensions une seule fois et stockage dans des variables
+    let sliderWidth, testimonialWidth, gap;
+    
+    // Fonction pour mesurer les dimensions une seule fois
+    function calculateDimensions() {
+        if (!testimonialSlider) return;
+        sliderWidth = testimonialSlider.offsetWidth;
+        testimonialWidth = testimonialItems[0].offsetWidth;
+        gap = 24; // Équivalent à 1.5rem en pixels
+    }
+    
+    // Fonction pour mettre à jour le slider des témoignages avec optimisation
     function updateTestimonialSlider() {
         if (!testimonialSlider) return;
         
-        // Calcul de la position pour centrer l'élément actif
-        const sliderWidth = testimonialSlider.offsetWidth;
-        const testimonialWidth = testimonialItems[0].offsetWidth;
-        const gap = 24; // Équivalent à 1.5rem en pixels
-        
-        // Déplacer le slider pour centrer l'élément actif
-        const offset = (currentTestimonialIndex * (testimonialWidth + gap)) - ((sliderWidth - testimonialWidth) / 2);
-        testimonialSlider.style.transform = `translateX(-${offset}px)`;
-        
-        // Mettre à jour les classes actives
-        testimonialItems.forEach((item, index) => {
-            if (index === currentTestimonialIndex) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-        
-        // Mettre à jour les indicateurs de pagination
-        testimonialPaginationDots.forEach((dot, index) => {
-            if (index === currentTestimonialIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
+        // Utiliser requestAnimationFrame pour éviter les problèmes de performance
+        requestAnimationFrame(() => {
+            // Déplacer le slider pour centrer l'élément actif
+            const offset = (currentTestimonialIndex * (testimonialWidth + gap)) - ((sliderWidth - testimonialWidth) / 2);
+            testimonialSlider.style.transform = `translateX(-${offset}px)`;
+            
+            // Optimisation: utiliser des classes pour l'élément actif uniquement
+            const activeItem = testimonialItems[currentTestimonialIndex];
+            
+            // Retirer la classe active de l'ancien élément actif
+            document.querySelector('.testimonial-item.active')?.classList.remove('active');
+            
+            // Ajouter la classe active au nouvel élément
+            activeItem.classList.add('active');
+            
+            // Mettre à jour les indicateurs de pagination
+            document.querySelector('.testimonial-pagination .pagination-dot.active')?.classList.remove('active');
+            testimonialPaginationDots[currentTestimonialIndex].classList.add('active');
         });
     }
     
@@ -314,7 +318,13 @@ document.addEventListener('DOMContentLoaded', function() {
             currentTestimonialIndex--;
         } else {
             // Boucle - aller au dernier témoignage quand on est au premier
+            // Transition douce pour la boucle
+            testimonialSlider.style.transition = 'none';
             currentTestimonialIndex = testimonialItems.length - 1;
+            // Force reflow pour appliquer le changement immédiatement
+            void testimonialSlider.offsetWidth;
+            // Réactiver la transition pour l'animation fluide
+            testimonialSlider.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
         }
         updateTestimonialSlider();
     }
@@ -324,13 +334,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentTestimonialIndex < testimonialItems.length - 1) {
             currentTestimonialIndex++;
         } else {
-            // Boucle - revenir au premier témoignage quand on est au dernier
+            // Transition douce pour la boucle
+            testimonialSlider.style.transition = 'none';
             currentTestimonialIndex = 0;
+            // Force reflow pour appliquer le changement immu00e9diatement
+            void testimonialSlider.offsetWidth;
+            // Ru00e9activer la transition pour l'animation fluide
+            testimonialSlider.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
         }
         updateTestimonialSlider();
     }
     
-    // Configurer les écouteurs d'événements pour les témoignages
+    // Configurer les u00e9couteurs d'u00e9vu00e9nements pour les tu00e9moignages
     if (testimonialPrevButton && testimonialNextButton) {
         testimonialPrevButton.addEventListener('click', goToPrevTestimonial);
         testimonialNextButton.addEventListener('click', goToNextTestimonial);
@@ -348,13 +363,25 @@ document.addEventListener('DOMContentLoaded', function() {
     let testimonialInterval;
     
     function startAutoTestimonial() {
+        // Arrêter l'intervalle existant s'il y en a un
+        stopAutoTestimonial();
+        
         testimonialInterval = setInterval(() => {
-            if (currentTestimonialIndex < testimonialItems.length - 1) {
-                currentTestimonialIndex++;
-            } else {
-                currentTestimonialIndex = 0;
+            // Vérifier si l'utilisateur n'est pas en train d'interagir
+            if (!isMouseDown) {
+                if (currentTestimonialIndex < testimonialItems.length - 1) {
+                    currentTestimonialIndex++;
+                } else {
+                    // Transition douce pour la boucle automatique
+                    testimonialSlider.style.transition = 'none';
+                    currentTestimonialIndex = 0;
+                    // Force reflow pour appliquer le changement immédiatement
+                    void testimonialSlider.offsetWidth;
+                    // Réactiver la transition pour l'animation fluide
+                    testimonialSlider.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+                }
+                updateTestimonialSlider();
             }
-            updateTestimonialSlider();
         }, 7000); // Change de témoignage toutes les 7 secondes
     }
     
@@ -445,10 +472,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser le slider des témoignages lors du chargement
     if (testimonialSlider && testimonialItems.length > 0) {
         // Décaler le premier rendu pour s'assurer que les largeurs sont calculées correctement
-        setTimeout(updateTestimonialSlider, 100);
+        setTimeout(() => {
+            calculateDimensions();
+            updateTestimonialSlider();
+            
+            // Définir les propriétés CSS importantes
+            testimonialSlider.style.willChange = 'transform';
+            testimonialItems.forEach(item => {
+                item.style.willChange = 'opacity, transform';
+            });
+        }, 100);
         
-        // Mettre à jour le slider lors du redimensionnement de la fenêtre
-        window.addEventListener('resize', updateTestimonialSlider);
+        // Optimisation: utiliser un debounce pour l'événement resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                calculateDimensions();
+                updateTestimonialSlider();
+            }, 250); // Attendre que le redimensionnement soit terminé
+        });
     }
     
     // Smooth scrolling pour les liens d'ancrage
